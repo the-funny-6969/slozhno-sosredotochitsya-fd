@@ -7,9 +7,27 @@
 	--body-bg-color: #FFF1F7;
 	--accent-color: #FF8DCB;
 	--text-color: #353430;
-	--text-color-transparent: rgba(53, 52, 48, 0.5);
+	--text-color-transparent: rgba(53, 52, 48, 0.4);
 	--h1-text-color: #FFC2E6;
+	--h2-text-color: var(--text-color);
 	--button-color: var(--text-color);
 	--accented-element-color: var(--text-color);
-	
+	--corner-color: var(--text-color);
+	--display-rec: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-image: url('../images/cover-image-dark.png');
+		--body-bg-color: #000028;
+		--accent-color: #FF0070;
+		--text-color: #F1B2CE;
+		--text-color-transparent: rgba(255, 0, 112, 0.4);
+		--h1-text-color: #DB00FF;
+		--h2-text-color: var(--accent-color);
+		--button-color: var(--accent-color);
+		--accented-element-color: var(--body-bg-color);
+		--corner-color: var(--accent-color);
+		--display-rec: inline-block;
+	}
 }
