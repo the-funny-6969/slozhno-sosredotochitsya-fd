@@ -1,5 +1,338 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+	/* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+	background-image: var(--bg-image);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-color: var(--body-bg-color);
+	font-family: IBM Plex Mono, sans-serif;
 }
+
+.header {
+	height: 100vh;
+	min-height: 768px;
+	display: grid;
+	grid-template-rows: auto min-content auto; 
+	position: relative;
+	margin: 20px 20px 40px;
+}
+
+.header__theme-menu {
+	display: grid;
+	grid-template-columns: auto min-content auto;	
+}
+
+.header__theme-menu-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column: 2;
+	justify-content: center;
+	gap: 10px;
+}
+
+@media (max-width: 767px) {
+.header__theme-menu {
+	grid-template-columns: 1fr;	
+	grid-template-rows: repeat(3, 1fr);
+}
+	
+  .header__theme-menu-list {
+    grid-row: 2;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, 1fr);
+	justify-content: end;
+	align-items: center;
+	gap: 0;
+  }
+} 
+
+.header__theme-menu-button {
+	height: 26px;
+	width: 70px;
+	line-height: 18px;
+	font-size: 18px;
+	background-color: transparent;
+	border: none;
+	text-transform: lowercase;
+	justify-self: center;
+	color: var(--button-color);
+}
+
+.header__theme-menu-button_active {
+	pointer-events: none;
+	border: 1px solid var(--button-color);
+}
+
+.header__theme-menu-button:hover {
+	border: 1px solid var(--text-color-transparent);
+}
+
+.header__theme-menu-button:focus {
+	border-bottom: 1px solid var(--button-color);
+}
+
+.header-title {
+	display: grid;
+	grid-template-columns: 1fr;
+	font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+	align-self: start;
+}
+
+@media (max-width: 767px) {
+  .header-title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+} 
+
+.title-decor {
+	color: var(--h1-text-color);
+	text-shadow: 4px 4px 0 var(--accent-color);
+	font-weight: bold;
+}
+
+.title-text {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: end;
+}
+
+@media (max-width: 375px) {
+.title-text {
+	grid-template-columns: 1fr;
+}
+} 
+
+.title-text-paragraph {
+	grid-column: 2;
+	height: min-content;
+}
+
+.title-text-decor {
+	background-color: var(--accent-color);
+	color: var(--accented-element-color);
+	font-weight: bold;
+}
+
+.header__rec {
+	display: none;
+	position: absolute;
+	grid-column: 3;
+	line-height: 25px;
+	font-size: 18px;
+	top: 0;
+	right: 30px;
+	color: var(--accent-color);
+} 
+
+.theme-dark .header__rec {
+	display: inline-block; 
+} 
+
+.header__rec::after {
+	content: '';            
+	width: 15px;
+	height: 15px;
+	background-color: var(--accent-color); 
+	position: absolute;     
+	left: 130%;              
+	top: 50%;               
+	transform: translateY(-50%); 
+	border-radius: 50%;       
+} 
+
+.corner-top {
+	position: absolute;
+	content: '';
+	grid-column: 3;
+	top: 0;
+	right: 0;
+}
+
+.corner-top::after {
+	content: '';
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	border-top: 1px solid var(--text-color);
+	border-right: 1px solid var(--text-color);
+} 
+
+.theme-dark .corner-top::after {
+	border-top: 1px solid var(--accent-color);
+	border-right: 1px solid var(--accent-color);
+} 
+
+.corner-bottom {
+	position: absolute;
+	content: '';
+	grid-column: 1;
+	bottom: 0;
+	left: 0;
+}
+
+.corner-bottom::before {
+	content: '';
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	border-bottom: 1px solid var(--text-color);
+	border-left: 1px solid var(--text-color);
+} 
+
+.theme-dark .corner-bottom::before {
+	border-bottom: 1px solid var(--accent-color);
+	border-left: 1px solid var(--accent-color);
+} 
+
+
+.li-title {
+	font-weight: normal;
+}
+
+h2 {
+	color: var(--text-color);
+}
+
+.theme-dark h2 {
+	color: var(--accent-color);
+} 
+
+ul {
+	display: grid;
+	gap: 20px;
+}
+
+li {
+	display: grid;
+	gap: 10px;
+	grid-template-rows: min-content auto;
+}
+
+p {
+	color: var(--text-color);
+	font-size: 18px;
+	line-height: 23.4px;
+	text-align: left;
+}
+
+section {
+	display: grid;
+	margin: 20px 20px 60px;
+	gap: 20px;
+}
+
+.section-why {
+	grid-template-columns: 1fr 2fr;
+}
+
+@media (max-width: 375px) {
+.section-why {
+	grid-template-columns: 1fr;
+}
+} 
+
+.section-what {
+	grid-template-columns: 1fr;
+}
+
+.section-what ul {
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+.section-what ul {
+	grid-template-columns: 1fr;
+}
+} 
+
+.section-how {
+	grid-template-columns: 1fr 2fr;
+}
+
+@media (max-width: 375px) {
+.section-how {
+	grid-template-columns: 1fr;
+}
+} 
+
+.h3-advice {
+	margin-bottom: 20px;
+}
+
+.text-link {
+	display: inline;
+	text-shadow: 4px 4px 0 var(--accent-color);
+	text-decoration: none;
+}
+
+.text-link:hover {
+	border-bottom: 1px solid var(--accented-element-color);
+}
+
+.text-link:focus {
+	border: 1px solid var(--accented-element-color);
+}
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.gallery-img {
+    inline-size: 100%;
+	block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+} 
+
+.gallery-img:first-of-type {
+	grid-column: span 2;
+}
+
+.gallery-img:nth-of-type(2) {
+	grid-row: span 2;
+}
+
+.gallery-img:nth-of-type(3) {
+	grid-row: span 2;
+}
+
+.gallery-img:last-of-type {
+	grid-column: span 2;
+}
+
+@media (max-width: 375px) {
+.gallery {
+	grid-template-columns: 1fr;
+}
+.gallery-img {
+	grid-column: 1;
+	grid-row: auto;
+}
+} 
+
+.footer {
+	height: 100vh;
+	min-height: 768px;
+	display: grid;
+	grid-template-columns: auto 1fr auto; 
+	align-items: center; 
+	position: relative;
+	margin: 20px;
+}
+
+.footer-title {
+	font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+	align-self: center;
+	justify-self: center;
+	grid-column: 2;
+}
+
+@media (max-width: 767px) {
+	.footer-title {
+		font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+	}
+} 
