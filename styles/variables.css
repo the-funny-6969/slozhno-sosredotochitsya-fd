@@ -3,10 +3,10 @@
   и их переопределение под различные устройства
 */
 :root {
-	--bg-image: url('../images/cover-image-light.png');	
-	--body-bg-color: #FFF1F7;	
-	--accent-color: #FF8DCB;	
-	--text-color: #353430;	
+	--bg-image: url('../images/cover-image-light.png');
+	--body-bg-color: #FFF1F7;
+	--accent-color: #FF8DCB;
+	--text-color: #353430;
 	--text-color-transparent: rgba(53, 52, 48, 0.5);
 	--h1-text-color: #FFC2E6;
 	--button-color: var(--text-color);
