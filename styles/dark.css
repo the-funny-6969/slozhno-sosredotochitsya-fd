@@ -19,5 +19,5 @@
 	--button-color: var(--accent-color);
 	--accented-element-color: var(--body-bg-color);
 	--corner-color: var(--accent-color);
-	--display-rec: inline-block
+	--display-rec: inline-block;
 }
