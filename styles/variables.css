@@ -14,4 +14,11 @@
 	--accented-element-color: var(--text-color);
 	--corner-color: var(--text-color);
 	--display-rec: none;
+	--main-gap: 20px;
+}
+
+@media (max-width: 600px) {
+	:root {
+		--main-gap: 10px;
+	}
 }
